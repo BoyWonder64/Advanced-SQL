@@ -1,0 +1,22 @@
+
+1. db.orders.find({}, {})
+
+2. db.orders.find({"$or":[{"customer.CustomerID": "VINET"}]})
+
+3. db.orders.find({"Employee.LastName": /Buchanan/})
+
+4. db.orders.find({$or:[{"Employee.LastName": /Buchanan/},{"Shipper.CompanyName": /Federal Shipping/}]})
+
+5. db.orders.find({"Shipper.CompanyName":'Federal Shipping'}, {"_id":0,"customer.CustomerID":1,"customer.CompanyName":1})
+
+6. db.orders.find({"OrderDate":{$gte:ISODate("1997-01-01T00:00:00.000Z")}}, {"_id":1,"OrderDate":1,"RequiredDate":1, "ShippedDate":1,"Shipper.CompanyName":1})
+
+7. db.orders.find({},{"customer.CustomerID":1 ,"customer.CompanyName":1 ,product: { $elemMatch : {ProductName: "Louisiana Fiery Hot Pepper Sauce"}}})
+
+8. db.orders.find({ "Freight": { $gt: 50 } }, { "customer.CustomerID": 1, "customer.CompanyName": 1 })
+
+9. db.orders.find({},{products: {$elemMatch: {ProductName:"Chang"}}})
+
+10. db.orders.find({$or: [{"products.ProductName":"Chang"},{"Shipper.CompanyName":"Federal Shipping"}]})
+
+

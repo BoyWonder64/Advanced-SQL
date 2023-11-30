@@ -1,0 +1,46 @@
+#Query 1
+db.orders.updateMany({},{[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        "Shipper.CompanyName": "Federal Shipping",
+      },
+  },
+  {
+    $set:
+      /**
+       * field: The field name
+       * expression: The expression.
+       */
+      {
+        "Shipper.Phone": "111-111-1111",
+      },
+  },
+])
+
+
+#Query 2
+db.orders.updateMany({},[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        "Shipper.CompanyName": "Federal Shipping",
+      },
+  },
+  {
+    $set:
+      /**
+       * field: The field name
+       * expression: The expression.
+       */
+      {
+        "Shipper.ContactName": "John Doe",
+      },
+  },
+])

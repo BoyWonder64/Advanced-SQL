@@ -1,0 +1,31 @@
+Assignment 3 
+Maitland Andrus
+9/14/2023
+
+1: Student 3NF
+   Class   3NF
+   Section 2NF
+2: 
+	1: Primary Key: See Diagram
+	2: Foreign Key See Diagram
+	3: The Domain of each column: See Diagram
+	4: Constraints
+		1: See Diagram
+		2: Enterprise Level Contraints
+			- Student capacity cant be about 30
+			- One class can be taught by at least 1 professor
+			- One class must have at least 2 sections
+		3: Referential Integrity Constraints
+			For the Enroll table
+				On Delete: if a student is deleted, the entry in the enroll table needs to be cascaded
+				On Update: if a student is updated update cascade 
+				On Delete: if a class is deleted, sections are to be cascaded
+				On Update: if a section is updated, the update is to be cascaded
+				On Delete: if a section is removed, the update is cascaded
+			
+	5: Associative Table: See Diagram
+	
+3: Example of a horizontal split
+	An example that I can think of where horizontal split makes sense to me if a company 
+	is international with multiple products I would perform a horizontal split against the products 
+	that are created. Some may only apply to certain countries while others may have a wider umbrella. 
